@@ -1,4 +1,4 @@
-[@elizaos/core v0.25.7](../index.md) / validateEnv
+[@elizaos/core v0.25.9](../index.md) / validateEnv
 
 # Function: validateEnv()
 

@@ -1,4 +1,4 @@
-[@elizaos/core v0.25.7](../index.md) / EnvConfig
+[@elizaos/core v0.25.9](../index.md) / EnvConfig
 
 # Type Alias: EnvConfig
 

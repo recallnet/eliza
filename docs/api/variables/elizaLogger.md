@@ -1,8 +1,8 @@
-[@elizaos/core v0.25.7](../index.md) / elizaLogger
+[@elizaos/core v0.25.9](../index.md) / elizaLogger
 
 # Variable: elizaLogger
 
-> `const` **elizaLogger**: `Logger`\<`string`, `boolean`\>
+> `const` **elizaLogger**: `any`
 
 ## Defined in
 

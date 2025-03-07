@@ -4,18 +4,6 @@
 ### What is Eliza?
 Eliza is an open-source framework for building AI agents that can interact on platforms like Twitter, Discord, and Telegram. It was created by Shaw and is maintained by the community.
 
-### What are the key components of Eliza?
-
-Eliza consists of these core components:
-- **Agents**: AI personalities that interact with users and platforms
-- **Actions**: Executable behaviors that agents can perform in response to messages
-- **Clients**: Platform connectors for services like Discord, Twitter, and Telegram 
-- **Plugins**: Modular extensions that add new features and capabilities
-- **Providers**: Services that supply contextual information to agents
-- **Evaluators**: Modules that analyze conversations and track agent goals
-- **Character Files**: JSON configurations that define agent personalities
-- **Memory System**: Database that stores and manages agent information using vector embeddings
-
 ### What's the difference between v1 and v2?
 
 Note: It's recommended for devs to keep working with v1, v2 will be mostly backwards compatible
@@ -61,7 +49,7 @@ Note: It's recommended for devs to keep working with v1, v2 will be mostly backw
 - For Windows users: WSL2 (Windows Subsystem for Linux)
 
 ### How do I get started with Eliza?
-1. Follow the [quick start guide](docs/quickstart.md) in the README
+1. Follow the [quick start guide](/docs/docs/quickstart.md) in the README
 3. Watch the AI Agent Dev School videos on YouTube for step-by-step guidance
 4. Join the Discord community for support
 
@@ -104,6 +92,8 @@ Yes, but consider:
 - Separate the .env files or use character-specific secrets
 - Monitor memory usage (2-4GB RAM per agent recommended)
 
+
+
 ---
 
 ## Twitter/X Integration
@@ -135,6 +125,25 @@ TWITTER_DRY_RUN=true   # Test mode
 2. Ensure proper credentials in .env file
 3. Consider using a residential IP or VPN as Twitter may block cloud IPs
 4. Set up proper rate limiting to avoid suspensions
+
+### How do I prevent unwanted Twitter interactions?
+To better control what tweets your agent responds to, configure `TWITTER_TARGET_USERS` in `.env` and set specific action flags like `TWITTER_LIKES_ENABLE=false` to control interaction types.
+
+### How do I troubleshoot Twitter authentication issues?
+Ensure correct credentials in `.env`, mark account as "Automated" in Twitter settings, and consider using a residential IP to avoid blocks.
+
+### How do I make my agent respond to Twitter replies?
+Set `ENABLE_ACTION_PROCESSING=true` and configure `TWITTER_POLL_INTERVAL`. Target specific users for guaranteed responses.
+
+### How do I avoid Twitter bot suspensions?
+- Mark account as automated in Twitter settings
+- Space out posts (15-20 minutes between interactions)
+- Avoid using proxies
+
+### How do I fix Twitter authentication issues?
+- Ensure correct credentials in .env file
+- Use valid TWITTER_COOKIES format
+- Turn on "Automated" in Twitter profile settings
 
 ---
 
@@ -171,6 +180,11 @@ Two options:
 
 ## Memory and Knowledge Management
 
+### How does memory management work in ElizaOS?
+ElizaOS uses RAG (Retrieval-Augmented Generation) to convert prompts into vector embeddings for efficient context retrieval and memory storage.
+
+### How do I fix "Cannot generate embedding: Memory content is empty"?
+Check your database for null memory entries and ensure proper content formatting when storing new memories.
 
 ### How do I manage my agent's memory?
 - To reset memory: Delete the db.sqlite file and restart

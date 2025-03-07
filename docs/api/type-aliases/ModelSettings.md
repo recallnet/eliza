@@ -1,4 +1,4 @@
-[@elizaos/core v0.25.7](../index.md) / ModelSettings
+[@elizaos/core v0.25.9](../index.md) / ModelSettings
 
 # Type Alias: ModelSettings
 

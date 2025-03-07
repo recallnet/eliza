@@ -1,4 +1,4 @@
-[@elizaos/core v0.25.7](../index.md) / CacheOptions
+[@elizaos/core v0.25.9](../index.md) / CacheOptions
 
 # Type Alias: CacheOptions
 
@@ -12,4 +12,4 @@
 
 ## Defined in
 
-[packages/core/src/types.ts:1233](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1233)
+[packages/core/src/types.ts:1250](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1250)

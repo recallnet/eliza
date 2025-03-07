@@ -1,4 +1,4 @@
-[@elizaos/core v0.25.7](../index.md) / parseJsonArrayFromText
+[@elizaos/core v0.25.9](../index.md) / parseJsonArrayFromText
 
 # Function: parseJsonArrayFromText()
 

@@ -651,6 +651,9 @@ export type Plugin = {
     /** Plugin name */
     name: string;
 
+    /** Plugin npm name */
+    npmName?: string;
+
     /** Plugin configuration */
     config?: { [key: string]: any };
 
@@ -674,6 +677,9 @@ export type Plugin = {
 
     /** Optional adapters */
     adapters?: Adapter[];
+
+    /** Optional post charactor processor handler */
+    handlePostCharacterLoaded?: (char: Character) => Promise<Character>;
 };
 
 export interface IAgentConfig {
@@ -808,10 +814,13 @@ export type Character = {
     adjectives: string[];
 
     /** Optional knowledge base */
-    knowledge?: (string | { path: string; shared?: boolean })[];
+    knowledge?: (string | { path: string; shared?: boolean } | { directory: string; shared?: boolean })[];
 
     /** Available plugins */
     plugins: Plugin[];
+
+    /** Character Processor Plugins */
+    postProcessors?: Pick<Plugin, 'name' | 'description' | 'handlePostCharacterLoaded'>[];
 
     /** Optional configuration */
     settings?: {
@@ -1182,6 +1191,7 @@ export interface IMemoryManager {
         content: string,
     ): Promise<{ embedding: number[]; levenshtein_score: number }[]>;
 
+    getMemoriesByIds(ids: UUID[]): Promise<Memory[]>;
     getMemoryById(id: UUID): Promise<Memory | null>;
     getMemoriesByRoomIds(params: {
         roomIds: UUID[];
