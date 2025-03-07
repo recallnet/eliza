@@ -1,6 +1,6 @@
 {
     "name": "@elizaos-plugins/plugin-recall",
-    "version": "0.1.9",
+    "version": "0.25.9",
     "type": "module",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -19,8 +19,8 @@
         "dist"
     ],
     "dependencies": {
-        "@recallnet/chains": "^0.0.1",
-        "@recallnet/sdk": "^0.0.2",
+        "@recallnet/chains": "^0.0.3",
+        "@recallnet/sdk": "^0.0.4",
         "@dsnp/parquetjs": "^1.8.5",
         "duckdb": "^1.2.0",
         "@elizaos/core": "workspace:*",
@@ -55,10 +55,10 @@
                 "minLength": 1,
                 "description": "Recall bucket alias is required"
             },
-            "RECALL_MEMORY_PREFIX": {
+            "RECALL_COT_LOG_PREFIX": {
                 "type": "string",
                 "minLength": 1,
-                "description": "Recall memory prefix is required"
+                "description": "Recall COT log prefix is required"
             },
             "RECALL_NETWORK": {
                 "type": "string",

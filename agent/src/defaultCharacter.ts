@@ -1,10 +1,11 @@
 import { type Character, ModelProviderName } from "@elizaos/core";
+import { recallStoragePlugin } from "@elizaos-plugins/plugin-recall";
 
 export const defaultCharacter: Character = {
     name: "Eliza",
     username: "eliza",
-    plugins: [],
-    modelProvider: ModelProviderName.LLAMALOCAL,
+    plugins: [recallStoragePlugin],
+    modelProvider: ModelProviderName.OPENAI,
     settings: {
         secrets: {},
         voice: {

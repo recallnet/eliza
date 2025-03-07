@@ -21,7 +21,7 @@ import {
     validateCharacterConfig,
 } from "@elizaos/core";
 import { defaultCharacter } from "./defaultCharacter.ts";
-
+import { recallStoragePlugin } from "@elizaos-plugins/plugin-recall";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import JSON5 from "json5";
 
@@ -217,8 +217,8 @@ async function jsonToCharacter(
         character.name,
         "loaded plugins:",
         "[\n    " +
-            character.plugins.map((p) => `"${p.npmName}"`).join(", \n    ") +
-            "\n]"
+        character.plugins.map((p) => `"${p.npmName}"`).join(", \n    ") +
+        "\n]"
     );
 
     // Handle Post Processors plugins
@@ -649,7 +649,7 @@ export async function createAgent(
         evaluators: [],
         character,
         // character.plugins are handled when clients are added
-        plugins: [bootstrapPlugin].flat().filter(Boolean),
+        plugins: [bootstrapPlugin, recallStoragePlugin].flat().filter(Boolean),
         providers: [],
         managers: [],
         fetch: logFetch,
@@ -898,8 +898,8 @@ const startAgents = async () => {
             character.name,
             "loaded plugins:",
             "[" +
-                character.plugins.map((p) => `"${p.npmName}"`).join(", ") +
-                "]"
+            character.plugins.map((p) => `"${p.npmName}"`).join(", ") +
+            "]"
         );
 
         // Handle Post Processors plugins
